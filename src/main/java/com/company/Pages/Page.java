@@ -25,6 +25,11 @@ public class Page {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    public Boolean waitInvisible(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(webDriver, 10, 100);
+        return wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
     protected void setImplicitly(boolean val) {
         if (val) {
             webDriver.manage().timeouts().implicitlyWait(IMPLICITY_WAIT, TimeUnit.SECONDS);
